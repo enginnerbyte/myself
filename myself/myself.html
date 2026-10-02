@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>رزومه — ابوالفضل صوفی</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: #E5E7EB;
+    color: #1F2937;
+    line-height: 1.7;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 20mm 18mm;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid #4F46E5;
+    margin-bottom: 24px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366F1, #4338CA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .header-info { flex: 1; }
+
+  .header-info h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1F2937;
+    margin-bottom: 4px;
+  }
+
+  .header-info .role {
+    font-size: 1rem;
+    color: #4F46E5;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .header-info .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.85rem;
+    color: #6B7280;
+  }
+
+  .header-info .contact span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .section {
+    margin-bottom: 22px;
+    page-break-inside: avoid;
+  }
+
+  .section-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1F2937;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: "";
+    width: 4px;
+    height: 18px;
+    background: linear-gradient(135deg, #6366F1, #4338CA);
+    border-radius: 4px;
+  }
+
+  .about {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: #4B5563;
+    padding: 14px 16px;
+    background: #F9FAFB;
+    border-right: 3px solid #4F46E5;
+    border-radius: 4px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+  }
+
+  .skill-name {
+    font-weight: 600;
+    color: #1F2937;
+    font-size: 0.9rem;
+  }
+
+  .skill-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .badge-expert {
+    background: #D1FAE5;
+    color: #065F46;
+  }
+
+  .badge-learning {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+
+  .badge-basic {
+    background: #DBEAFE;
+    color: #1E40AF;
+  }
+
+  .project {
+    padding: 14px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #6366F1, #4338CA);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1F2937;
+  }
+
+  .project-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: #EEF2FF;
+    color: #4338CA;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: #4B5563;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .project-link {
+    font-size: 0.78rem;
+    color: #4F46E5;
+    text-decoration: none;
+    font-weight: 600;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .project-stack {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .project-stack span {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: #F3F4F6;
+    color: #4B5563;
+    border-radius: 4px;
+    border: 1px solid #E5E7EB;
+  }
+
+  .footer {
+    margin-top: 30px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E7EB;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #9CA3AF;
+  }
+
+  @media print {
+    body { background: #FFFFFF; padding: 0; }
+    .page {
+      width: 100%;
+      min-height: auto;
+      box-shadow: none;
+      padding: 12mm 14mm;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="avatar">ا</div>
+    <div class="header-info">
+      <h1>ابوالفضل صوفی</h1>
+      <div class="role">دانشجوی مهندسی کامپیوتر — دانشگاه خوراسگان</div>
+      <div class="contact">
+        <span>📧 abolfazlengineer9@gmail.com</span>
+        <span>💬 @ENgineerASB</span>
+        <span>📍 اصفهان، ایران</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">درباره من</div>
+    <div class="about">
+      دانشجوی مهندسی کامپیوتر دانشگاه خوراسگان، علاقه‌مند به توسعه‌ی وب و ساخت پروژه‌های کاربردی. مسلط به پایتون و مهندسی پرامپت، در حال یادگیری جنگو برای توسعه‌ی بک‌اند. به برنامه‌نویسی با کمک هوش مصنوعی و وایب کدینگ علاقه‌ی ویژه‌ای دارم.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">مهارت‌ها</div>
+    <div class="skills-grid">
+
+      <div class="skill-item">
+        <span class="skill-name">Python</span>
+        <span class="skill-badge badge-expert">مسلط</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">مهندسی پرامپت</span>
+        <span class="skill-badge badge-expert">مسلط</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">برنامه‌نویسی با کمک هوش مصنوعی</span>
+        <span class="skill-badge badge-expert">مسلط</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">وایب کدینگ</span>
+        <span class="skill-badge badge-expert">مسلط</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">HTML</span>
+        <span class="skill-badge badge-basic">مقدماتی</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">CSS</span>
+        <span class="skill-badge badge-basic">مقدماتی</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">JavaScript</span>
+        <span class="skill-badge badge-basic">مقدماتی</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">Django</span>
+        <span class="skill-badge badge-learning">در حال یادگیری</span>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-name">کتابخانه Tkinter</span>
+        <span class="skill-badge badge-basic">آشنایی</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">پروژه‌ها</div>
+
+    <div class="project">
+      <div class="project-header">
+        <div class="project-name">🎵 هگمتانه</div>
+        <span class="project-tag">پروژه شخصی</span>
+      </div>
+      <div class="project-desc">
+        مجموعه‌ای از آثار موسیقایی الهام‌گرفته از تاریخ و فرهنگ هگمتانه. شامل پخش‌کننده‌ی سفارشی موسیقی، جستجوی زنده، تم روز/شب، طراحی واکنش‌گرا و انیمیشن‌های نرم.
+      </div>
+      <div class="project-stack">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+      <div style="margin-top: 8px;">
+        <a href="https://enginnerbyte.github.io/hegmatane/" class="project-link">
+          https://enginnerbyte.github.io/hegmatane/
+        </a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <div class="project-name">🎓 پارسورا</div>
+        <span class="project-tag">پروژه دانشگاهی</span>
+      </div>
+      <div class="project-desc">
+        پلتفرم اطلاعات اساتید و دروس دانشگاه خوراسگان، با هدف تسهیل فرآیند انتخاب واحد برای دانشجویان. شامل جستجوی پیشرفته، فیلترها، سیستم ذخیره‌سازی و پروفایل اساتید.
+      </div>
+      <div class="project-stack">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+      <div style="margin-top: 8px;">
+        <a href="https://enginnerbyte.github.io/parsora/" class="project-link">
+          https://enginnerbyte.github.io/parsora/
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    طراحی و توسعه توسط ابوالفضل صوفی
+  </div>
+
+</div>
+
+</body>
+</html>
